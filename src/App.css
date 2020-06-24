@@ -1,38 +1,106 @@
-.App {
+* {
+	box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: #333;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+.page .piano {
+  position: relative;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 300;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.piano-keys {
+  user-select: none;
+  border: 1px solid #999;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.key-white {
+  display: inline-block;
+  background: #fff;
+  width: 42px;
+  height: 202px;
+  position: relative;
+}
+.key-white:not(:first-child) {
+  border-left: 0px solid transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.key-white .node {
+  position: absolute;
+  font-weight: bold;
+  bottom: 5px;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.key-white .key {
+  font-size: 12px;
+  position: absolute;
+  font-weight: bold;
+  bottom: 30px;
+  text-align: center;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdc3c7;
+  left: 5px;
+  line-height: 30px;
+  border-radius: 50%;
 }
-
-.App-link {
-  color: #61dafb;
+.key-black {
+  background: rgb(32,32,32);
+  color: #fff;
+  width: 32px;
+  height: 122px;
+  position: absolute;
+  z-index: 999;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.key-black .node {
+  font-size: 12px;
+  position: absolute;
+  font-weight: bold;
+  bottom: 5px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.key-black .key {
+  font-size: 12px;
+  position: absolute;
+  font-weight: bold;
+  bottom: 30px;
+  text-align: center;
+  display: block;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #bdc3c7;
+  left: 4px;
+  line-height: 23px;
+  border-radius: 50%;
+}
+.key-white:hover,
+.key-black:hover,
+.key-highlight {
+  background: rgb(255,192,32);
 }
